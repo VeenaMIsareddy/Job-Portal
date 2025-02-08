@@ -1,0 +1,9 @@
+<div class="container mt-4 shadow-lg py-3 mb-4">
+    <form method="POST" enctype="multipart/form-data"> {% csrf_token %}
+        <div class="form-row">
+            <label>Upload Resume</label>
+            <input type="file" class="form-control mt-3" name="resume" id="resume">
+        </div>
+        <input type="submit" value="Submit" class="btn btn-danger mt-3">
+    </form>
+    </div>

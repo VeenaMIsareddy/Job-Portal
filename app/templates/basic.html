@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg sticky-top navbar-dark">
+    <div class="container-fluid w-50">
+      <a class="navbar-brand" href="#">Job Portal</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          {% if not request.user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link {% block home %} {% endblock %}" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% block user_login %} {% endblock %}" href="/user_login/">User Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% block admin_login %} {% endblock %}" href="/admin_login/">Admin Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% block company_login %} {% endblock %}" href="/company_login/">Company Login</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link active" href="/logout/">Logout</a>
+          </li>
+        </ul>
+        {% endif %}
+      </div>
+    </div>
+  </nav>
